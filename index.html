@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
 
@@ -17,10 +18,10 @@
         <div class="container">
             <nav class="nav">
                 <div class="nav__logo">
-                    <a href="#"><img src="images/Logo-nav.png" alt="Navigation Logo - AXIT"></a>
+                    <a href="#top"><img src="images/Logo-nav.png" alt="Navigation Logo - AXIT"></a>
                 </div>
                 <ul class="nav__list">
-                    <li class="nav__link active"><a href="#features">Feauteres</a></li>
+                    <li class="nav__link"><a href="#features">Feauteres</a></li>
                     <li class="nav__link"><a href="#awesome_id">About</a></li>
                     <li class="nav__link" class="nav__link"><a href="#pricing">Pricing</a></li>
                     <li class="nav__link"><a href="#review">Reviews</a></li>
@@ -31,7 +32,7 @@
     </div>
 
     <!-- HEADER -->
-    <div class="header-wrapper">
+    <div class="header-wrapper" id="top" data-content>
         <div class="container">
             <header class="header">
                 <div class="header__content">
@@ -45,9 +46,9 @@
                 <div class="trial__block">
                     <div class="trial trial--title">Try your <span>free</span> trial today</div>
                     <form class="trial__input" action="/">
-                        <input type="text" name="name" id="name" placeholder="Name">
-                        <input type="email" name="email" id="email" placeholder="Email">
-                        <input type="password" name="password" id="password" placeholder="Password">
+                        <input type="text" name="name" id="trial-name" placeholder="Name">
+                        <input type="email" name="email" id="trial-email" placeholder="Email">
+                        <input type="password" name="password" id="trial-password" placeholder="Password">
                     </form>
                     <a href="#/" class="trial trial--footer">Get started</a>
                 </div>
@@ -79,15 +80,15 @@
     </div>
 
     <!-- FUTURE 1. TABS -->
-    <section class="features-wrapper" id="features">
+    <section class="features-wrapper" id="features" data-content>
         <div class="container">
             <div class="feature">
                 <div class="feature__tabs">
-                    <div class="tab active">Tab 1</div>
-                    <div class="tab">Tab 2</div>
-                    <div class="tab">Tab 3</div>
+                    <div class="tab active" id="tab1">Tab 1</div>
+                    <div class="tab" id="tab2">Tab 2</div>
+                    <div class="tab" id="tab3">Tab 3</div>
                 </div>
-                <div class="feature__content">
+                <div class="feature__content" data-tab1>
                     <h2 class="feature__title">Tabs with soft transitioning effect.</h2>
                     <div class="feature__text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
@@ -99,26 +100,28 @@
                     </div>
                     <a href="#/" class="btn btn--feature">Download</a>
                 </div>
-                <div class="feature__content none">
+                <div class="feature__content none" data-tab2>
                     <h2 class="feature__title">Tabs with soft transitioning effect.</h2>
                     <div class="feature__text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                        <p style="color: red">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                            bibendum laoreet.</p>
+                        <p style="color: black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
                             bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
                             justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
                             penatibus et magnis dis parturient montes.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-                            bibendum laoreet.</p>
                     </div>
                     <a href="#/" class="btn btn--feature">Download</a>
                 </div>
-                <div class="feature__content none">
+                <div class="feature__content none" data-tab3>
                     <h2 class="feature__title">Tabs with soft transitioning effect.</h2>
                     <div class="feature__text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                            bibendum laoreet.</p>
+                        <p style="color: green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
                             bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
                             justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
                             penatibus et magnis dis parturient montes.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                        <p style="color: blue">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
                             bibendum laoreet.</p>
                     </div>
                     <a href="#/" class="btn btn--feature">Download</a>
@@ -180,7 +183,7 @@
     </div>
 
     <!-- AWESOME -->
-    <article id="awesome_id">
+    <article id="awesome_id" data-content>
         <div class="container">
             <section class="awesome">
                 <h2 class="article__title">Why is this awesome</h2>
@@ -370,9 +373,9 @@
             </div>
             <div class="contact-form__wrapper">
                 <form class="message-form" action="/">
-                    <input type="text" name="name" id="name" placeholder="Name">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                    <input type="text" name="name" id="contact-name" placeholder="Name">
+                    <input type="email" name="email" id="contact-email" placeholder="Email">
+                    <input type="text" name="subject" id="contact-subject" placeholder="Subject">
                 </form>
                 <label class="message-area" for="message">
                     <textarea name="Message" id="message" cols="30" rows="5"></textarea>
