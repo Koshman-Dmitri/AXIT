@@ -20,14 +20,11 @@ for (let anchor of anchors) {
         e.preventDefault();
 
         const blockID = anchor.getAttribute('href').slice(1);
+        const y = document.getElementById(blockID).getBoundingClientRect().top + window.pageYOffset - document.querySelector('.nav-wrapper').clientHeight;
 
-        document.getElementById(blockID).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
+        window.scrollTo({top: y, behavior: 'smooth'});
 
         mobileNavBtn.classList.remove('active');
-        navList.classList.add('invisible');
     })
 }
 
