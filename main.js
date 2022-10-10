@@ -20,12 +20,12 @@ for (let anchor of anchors) {
 }
 
 // Активная вкладка в навигации (НАДО НЕ ПО КЛИКУ, А ПО СКРОЛЛУ)
-navLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-        navLinks.forEach(item => item.classList.remove('active'));
-        this.classList.add('active');
-    })
-})
+// navLinks.forEach(function(link) {
+//     link.addEventListener('click', function() {
+//         navLinks.forEach(item => item.classList.remove('active'));
+//         this.classList.add('active');
+//     })
+// })
 
 // Окна с табами
 tabs.forEach(function(tab) {
@@ -51,23 +51,25 @@ priceItem.forEach(function(price) {
 })
 
 
-
+// Анимация скролла
 window.addEventListener('scroll', () => {
     let scrollDistance = window.scrollY;
     console.log(scrollDistance);
-})
 
-decodeURIComponent.querySelectorAll('[data-content]').forEach((el, i) => {
-    if (el.offsetTop - document.querySelector('.nav-wrapper').clientHeight <= scrollDistance) {
-        navLinks.forEach((el) => {
-            if (el.classList.contains('active')) {
-                el.classList.remove('active');
-            }
-        })
-    }
+    document.querySelectorAll('[data-content]').forEach((el, i) => {
+        if (el.offsetTop + el.clientHeight - document.querySelector('.nav-wrapper').clientHeight <= scrollDistance) {
+            navLinks.forEach((el) => {
+                if (el.classList.contains('active')) {
+                    el.classList.remove('active');
+                }
+            })
 
-    
-})
+            navLinks[i].classList.add('active');
+        }
+    });
+});
+
+
 
 
 
