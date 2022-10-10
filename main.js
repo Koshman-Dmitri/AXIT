@@ -16,7 +16,7 @@ mobileNavBtn.addEventListener('click', () => {
 
 // Плавная прокрутка
 for (let anchor of anchors) {
-    anchor.addEventListener('click', function(e) {
+    anchor.parentElement.addEventListener('click', function(e) {
         e.preventDefault();
 
         const blockID = anchor.getAttribute('href').slice(1);
